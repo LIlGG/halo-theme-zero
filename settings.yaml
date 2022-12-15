@@ -1,0 +1,12 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: theme-modern-starter-setting
+spec:
+  forms:
+    - group: base
+      label: 基础设置
+      formSchema:
+        - $formkit: text
+          name: text
+          label: 设置

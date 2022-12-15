@@ -1,0 +1,38 @@
+{
+  "name": "halo-theme-zero",
+  "version": "1.0.0",
+  "description": "起名“zero”，寓意一切从零起始",
+  "scripts": {
+    "dev": "vite build --watch",
+    "lint": "eslint ./src --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
+    "prettier": "prettier --write './src/**/*.{js,ts,css,json,ml,yaml,html}' './templates/**/*.html'"
+  },
+  "keywords": [
+    "halo",
+    "halo-theme",
+    "theme-zero"
+  ],
+  "homepage": "https://github.com/LIlGG/halo-theme-zero#readme",
+  "author": {
+    "name": "LIlGG",
+    "url": "https://github.com/LIlGG",
+    "email": "mail@e.lixingyong.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LIlGG/halo-theme-zero/issues"
+  },
+  "repository": {
+    "url": "https://github.com/LIlGG/halo-theme-zero",
+    "type": "git"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.29.0",
+    "postcss": "^8.4.20",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.1"
+  }
+}

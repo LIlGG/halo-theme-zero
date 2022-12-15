@@ -1,0 +1,17 @@
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+metadata:
+  name: theme-zero
+spec:
+  displayName: Zero
+  author:
+    name: LIlGG
+    website: https://lixingyong.com
+  description: 起名“zero”，寓意一切从零起始
+  logo: https://halo.run/logo
+  website: https://github.com/LIlGG/halo-theme-zero
+  repo: https://github.com/LIlGG/halo-theme-zero.git
+  settingName: "theme-zero-setting"
+  configMapName: "theme-zero-configMap"
+  version: 1.0.0
+  require: 2.0.0
