@@ -1,6 +1,55 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" lang="zh-CN">
+<html xmlns:th="https://www.thymeleaf.org" lang="zh-CN" th:fragment="layout(title, content)">
   <head>
-    
+    <!--/* 引入公共 Head */-->
+    <th:block th:replace="module/head/index"/>
+    <title th:insert="${title}"></title>
+    <!--/* noscript */-->
+    <th:block th:replace="scripts/noscript"/>
   </head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div class="container">
+      <!--/* 进度条 */-->
+      <div class="headband"></div>
+      <!--/* 导航栏 */-->
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner" th:insert="module/header/index"></div>
+      </header>
+      <!--/* 全局小部件，如回到顶部等 */-->
+      <th:block th:replace="module/widgets"/>
+      <!--/* 主体内容 */-->
+      <main class="main">
+        <div class="main-inner">
+          <div class="content-wrap">
+            <!--/* 挂钩，不同页面将使用不同的内容进行渲染 */-->
+            <div class="content" th:classappend="${_templateId}">
+              <th:block th:replace="${content}"/>
+            </div>
+            <!--/* 评论插件 */-->
+            <th:block th:replace="module/comments"/>
+          </div>
+          <!--/* TODO：页面内侧边栏 */-->
+        </div>
+      </main>
+      <!--/* 页脚 */-->
+      <footer class="footer">
+        <div class="footer-inner">
+          <!--/* TODO：主题国际化选择功能 */-->
+          <!--/* 固定页脚内容，例如版权等 */-->
+          <th:block th:replace="module/footer"/>
+          <!--/* 一些三方统计类型服务，例如卜算子 */-->
+          <th:block th:replace="third_module/statistics/index"/>
+        </div>
+      </footer>
+    </div>
+    <!--/* script */-->
+    <!--/* 主题自身的 script */-->
+    <th:block th:replace="scripts/index"/>
+    <!--/* 三方服务的 script */-->
+    <th:block th:replace="third_module/index"/>
+    <!--/* 与 pjax 生命周期相关的 script。每个页面都应重新请求获取（如果仅是需要重新执行则不必放在这里） */-->
+    <div id="pjax" th:if="${theme.config.global.pjax}">
+      
+    </div>
+  </body>
 </html>

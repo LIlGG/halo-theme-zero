@@ -1,12 +1,124 @@
 apiVersion: v1alpha1
 kind: Setting
 metadata:
-  name: theme-modern-starter-setting
+  name: theme-zero-setting
 spec:
   forms:
-    - group: base
-      label: 基础设置
+    - group: global
+      label: 全局设置
       formSchema:
+        - $formkit: radio
+          label: PJAX
+          name: pjax
+          value: true
+          options:
+            - value: true
+              label: 启用
+            - value: false
+              label: 关闭
+        - $formkit: radio
+          label: 页面加载进度条
+          name: pace
+          id: pace
+          key: pace
+          value: true
+          options:
+            - value: true
+              label: 启用
+            - value: false
+              label: 关闭
+        - $formkit: select
+          label: 进度条样式
+          help: 各样式风格参考 https://codebyzach.github.io/pace/
+          if: "$get(pace).value == true"
+          name: pace_theme
+          value: minimal
+          options:
+            - value: barber-shop
+              label: Barber Shop
+            - value: big-counter
+              label: Big Counter
+            - value: bounce
+              label: Bounce
+            - value: center-atom
+              label: Center Atom
+            - value: center-circle
+              label: Center Circle
+            - value: center-radar
+              label: Center Radar
+            - value: center-simple
+              label: Center Simple
+            - value: corner-indicator
+              label: Corner Indicator
+            - value: fill-left
+              label: Fill Left
+            - value: flash
+              label: Flash
+            - value: flat-top
+              label: Flat Top
+            - value: loading-bar
+              label: Loading Bar
+            - value: mac-osx
+              label: Mac OSX
+            - value: material
+              label: Material
+            - value: minimal
+              label: Minimal
+        - $formkit: radio
+          label: 回到顶部
+          name: backtop
+          value: true
+          options:
+            - value: true
+              label: 启用
+            - value: false
+              label: 关闭
+        - $formkit: radio
+          label: 阅读进度条
+          name: reading_progress
+          value: true
+          options:
+            - value: true
+              label: 启用
+            - value: false
+              label: 关闭
+    - group: footer
+      label: 页脚设置
+      formSchema:
+        - $formkit: radio
+          label: 备案功能
+          name: beian
+          id: beian
+          key: beian
+          value: true
+          options:
+            - value: true
+              label: 启用
+            - value: false
+              label: 关闭    
         - $formkit: text
-          name: text
-          label: 设置
+          label: ICP 备案号
+          if: "$get(beian).value == true"
+          name: icp
+          validation: required
+        - $formkit: text
+          label: 公安备案编号
+          help: 公安备案编号中的数字，会跟在跳转链接内
+          if: "$get(beian).value == true"
+          name: gongan_id
+          validation: "number"
+        - $formkit: text
+          label: 公安备案编号
+          help: 完整的备案号，用于网页中显示
+          if: "$get(beian).value == true"
+          name: gongan_num
+          validation: "number"
+        - $formkit: radio
+          label: Halo 及 Zero 的链接
+          name: powered
+          value: true
+          options:
+            - value: true
+              label: 启用
+            - value: false
+              label: 关闭   

@@ -1,0 +1,21 @@
+<th:block th:fragment="module_head">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <meta name="generator" content="Halo 2.0.0">
+
+  <!--/* 全局 css */-->
+  <link rel="stylesheet" th:href="@{/assets/dist/style.css?v={version}(version=${theme.spec.version})}">
+
+  <!--/* TODO: 待定加入字体 */-->
+
+  <!--/* iconify 字体图标 */-->
+  <link rel="stylesheet" th:href="@{/assets/lib/iconify/iconify.min.js}">
+
+  <!--/* 头部加载进度条 */-->
+  <th:block th:if="${theme.config.global.pace}">
+    <link rel="stylesheet" th:href="@{/assets/lib/pace/css/pace-theme-{theme}.min.css(theme=${theme.config.global.pace_theme})}">
+    <script th:src="@{/assets/lib/pace/pace.min.js}"></script>
+  </th:block>
+
+  <!--/* TODO：导出某些在 JS 中需要的主题配置（或者采用 Alpine 直接在 html 中使用响应式数据） */-->
+</th:block>

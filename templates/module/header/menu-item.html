@@ -1,0 +1,6 @@
+<li th:fragment="menu_item(menuItem)" class="menu-item" th:appendclass="|menu-item-${menuItem.metadata.name}|">
+  <a th:href="@{${menuItem.status?.href}}" rel="section">
+    <!--/* TODO：Halo 目前不存在菜单图标，预留 */-->
+    <th:block th:text="${menuItem.status.displayName}"></th:block>
+  </a>
+</li>

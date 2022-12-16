@@ -1,0 +1,31 @@
+<!--/* 站点个人信息 */-->
+<div class="site-brand-container" th:fragment="brand">
+  <!--/* 导航栏切换（大部分情况会用于移动端） */-->
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+  <div class="site-meta">
+    <div class="site-meta-headline">
+      <a>
+        <img class="logo-image" th:src="${site.logo}" th:alt="${site.title}">
+      </a>
+    </div>
+    <a th:href="${site.url}" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title" th:text="${site.title}"></h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+    <p th:if="${not #strings.isEmpty(site.subtitle)}" class="site-subtitle" itemprop="description" th:text="${site.subtitle}"></p>
+  </div>
+  <!--/* 导航栏工具 */-->
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+      <!--/* TODO: 搜索 */-->
+      <!--/* TODO: 控制台 */-->
+    </div>
+  </div>
+</div>

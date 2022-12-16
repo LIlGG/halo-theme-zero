@@ -1,0 +1,42 @@
+<!--/* 页脚设置 */-->
+<th:block th:fragment="footer">
+  <!--/* 备案功能 */-->
+  <div class="beian" th:if="${theme.config.footer.beian}">
+    <a href="https://beian.miit.gov.cn/" th:text="${theme.config.footer.icp}" target="_blank"></a>
+    <th:block th:if="${not #strings.isEmpty(theme.config.footer.gongan_id) && not #strings.isEmpty(theme.config.footer.gongan_num)}">
+      <img th:src="@{/assets/images/other/beian_gongan.png}" style="display: inline-block;">
+      <a th:href="@{http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={recordcode}(recordcode=${theme.config.footer.gongan_id})}" th:text="${theme.config.footer.gongan_number}" target="_blank"></a>
+    </th:block>
+  </div>
+
+  <!--/* 版权 */-->
+  <div class="copyright" th:with="copyright_year = ${#dates.format(new java.util.Date().getTime(), 'yyyy')}">
+    <span itemprop="copyrightYear" th:text="${copyright_year}"></span>
+    <span class="with-love">
+      <!--/* TODO：年份与版权之间的图标待定 */-->
+      <i class="iconify"></i>
+    </span>
+    <!--/* TODO：Halo 暂无全局的作者 */-->
+    <span class="author" itemprop="copyrightHolder" th:text="Author"></span>
+    <!--/* TODO 系统运行时间 */-->
+  </div>
+
+  <!--/* powered */-->
+  <div class="powered-by" th:if="${theme.config.footer.powered}">
+    <span>
+      <th:block th:text="|Powered|"/>
+      <!--/* TODO：图标待定 */-->
+      <i class="iconify"></i>
+      <th:block th:text="|by|"/>
+      <a class="theme-link" href="http://halo.run" title="一款现代化的开源建站 / CMS 系统。" target="_blank" th:text="Halo"></a>
+    </span>
+    <th:block th:text="|•|"></th:block>
+    <span>
+      <th:block th:text="|Crafted with|"/>
+      <!--/* TODO：图标待定 */-->
+      <i class="iconify"></i>
+      <th:block th:text="|by|"/>
+      <a class="theme-link" href="https://github.com/LIlGG/halo-theme-zero" target="_blank" th:text="LIlGG"></a>
+    </span>
+  </div>
+</th:block>

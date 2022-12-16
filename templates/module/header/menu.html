@@ -1,0 +1,8 @@
+<!--/* 导航菜单 */-->
+<nav class="site-nav" th:fragment="menu">
+  <ul id="menu" class="main-menu menu" th:with="menu = ${menuFinder.getPrimary()}">
+    <th:block th:each="menuItem : ${menu.menuItems}">
+      <th:block th:replace="module/header/menu-item :: menu_item(${menuItem})" />
+    </th:block>
+  </ul>
+</nav>

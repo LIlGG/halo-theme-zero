@@ -1,0 +1,10 @@
+<!--/* 小部件 */-->
+<th:block th:fragment="widgets">
+  <!--/* 回到顶部 */-->
+  <div class="back-to-top" th:if="${theme.config.global.backtop}">
+    <!--/* 回到顶部样式待设计（或者与主题风格相关联）*/-->
+  </div>
+  <!--/* 阅读进度条 */-->
+  <div class="reading-progress-bar" th:if="${theme.config.global.reading_progress}"></div>
+  <!--/* TODO: 待添加更多小部件 */-->
+</th:block>
