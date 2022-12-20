@@ -4,12 +4,12 @@
   <meta name="generator" content="Halo 2.0.0">
 
   <!--/* 全局 css */-->
-  <link rel="stylesheet" th:href="@{/assets/dist/style.css?v={version}(version=${theme.spec.version})}">
+  <link rel="stylesheet" th:href="@{/assets/dist/css/zero.min.css?v={version}(version=${theme.spec.version})}">
 
   <!--/* TODO: 待定加入字体 */-->
 
   <!--/* iconify 字体图标 */-->
-  <link rel="stylesheet" th:href="@{/assets/lib/iconify/iconify.min.js}">
+  <script th:src="@{/assets/lib/iconify/iconify.min.js}"></script>
 
   <!--/* 头部加载进度条 */-->
   <th:block th:if="${theme.config.global.pace}">

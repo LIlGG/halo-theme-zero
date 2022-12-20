@@ -7,6 +7,13 @@ spec:
     - group: global
       label: 全局设置
       formSchema:
+        - $formkit: select
+          label: 主题风格
+          name: scheme
+          value: default
+          options:
+            - value: default
+              label: 精简
         - $formkit: radio
           label: PJAX
           name: pjax

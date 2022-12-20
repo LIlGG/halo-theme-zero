@@ -1,4 +1,16 @@
 <!--/* TODO：主题 js */-->
 <th:block th:fragment="scripts">
+  <!--/* TODO：依赖 JS, 需要求在自定义 JS 前加载的 JS，不包括可选功能 JS。（但通常通过 webpack 也可内联，待定）  */-->
+  <th:block th:replace="scripts/libs"></th:block>
 
+  <!--/* 基础 JS */-->
+  <script type="module" th:src="@{/assets/dist/js/zero.min.js?v={version}(version=${theme.spec.version})}"></script>
+
+  <!--/* PJAX */-->
+  <script th:if="${theme.config.global.pjax}" th:src="@{/assets/dist/js/pjax/pjax.min.js}"></script>
+
+  <!--/* 根据主题风格，导入不同的 js */-->
+  <script th:src="@{/assets/dist/js/schemes/{scheme}.min.js(scheme=${theme.config.global.scheme})}"></script>
+
+  <!--/* 可选功能 JS，例如用户可以开关的其余功能（lazyload 等） */-->
 </th:block>
