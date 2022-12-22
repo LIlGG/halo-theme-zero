@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: Object.fromEntries(
-        glob.sync('src/**/*.*').map(file => [
+        glob.sync('src/js/**/*.*').map(file => [
           path.relative('src', file.slice(0, file.length - path.extname(file).length)),
           fileURLToPath(new URL(file, import.meta.url))
         ])
@@ -23,7 +23,8 @@ export default defineConfig({
           return '[name].min.[ext]'
         }
       },
-    }
+    },
+    sourcemap: true
   },
   resolve:{
     alias:{

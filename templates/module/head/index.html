@@ -18,4 +18,7 @@
   </th:block>
 
   <!--/* TODO：导出某些在 JS 中需要的主题配置（或者采用 Alpine 直接在 html 中使用响应式数据） */-->
+  <script th:inline="javascript">
+    const config = '[(${theme.config})]'
+  </script>
 </th:block>

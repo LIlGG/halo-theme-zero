@@ -129,3 +129,15 @@ spec:
               label: 启用
             - value: false
               label: 关闭   
+    - group: advanced
+      label: 高级设置
+      formSchema:
+        - $formkit: radio
+          label: Console 打印加载日志
+          name: log
+          value: true
+          options:
+            - value: true
+              label: 启用
+            - value: false
+              label: 关闭

@@ -20,6 +20,7 @@
  * 脱离 Jquery，使用 https://github.com/MoOx/pjax
  */
 import Pjax from 'pjax';
+import { zero } from "../zero";
 
 new Pjax({
   selectors: [
@@ -67,5 +68,6 @@ window.addEventListener('pjax:success', () => {
     }
     parent.appendChild(script);
   });
-  // TODO 第三种脚本处理方式，执行 zero 的 refresh 方法来触发监听事件。 
+  // 第三种脚本处理方式，执行 zero 的 refresh 方法来触发监听事件。
+  zero.refresh();
 })

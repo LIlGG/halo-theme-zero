@@ -4,6 +4,7 @@
   "description": "起名“zero”，寓意一切从零起始",
   "scripts": {
     "dev": "vite build --watch",
+    "debug": "vite build",
     "lint": "eslint ./src --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
     "prettier": "prettier --write './src/**/*.{js,ts,css,json,ml,yaml,html}' './templates/**/*.html'"
   },

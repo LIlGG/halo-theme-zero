@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:8090", // 本地开发时的 Halo 地址
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "pnpm: debug"
+    }
+  ]
+}
