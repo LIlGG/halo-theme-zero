@@ -221,8 +221,8 @@ export function documentFunction() {
   };
 }
 
-import "../module/index";
-import "../css/zero.css";
+import "@/module/index";
+import "@/css/zero.css";
 
 window.addEventListener("zero:refresh", () => {
   console.log("event -> refresh");

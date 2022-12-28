@@ -1,7 +1,12 @@
-body {
-  background: #f2f2f2;
-}
+/*
+* Zero 基础框架样式，不包含各风格的样式。各风格样式将根据设置动态进行加载。
+* 使用 vite 自带的 postcss-import 功能。https://github.com/postcss/postcss-import
+*/
+/* mixins */
+@import "mixins.css";
 
-ul {
-  list-style: decimal;
-}
+/* base 变量 */
+@import "variables.css";
+
+/* 基础架构样式 */
+@import "common";

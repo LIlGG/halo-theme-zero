@@ -1,0 +1,15 @@
+/*
+* 主题整体轮廓 CSS。本主题基础网格如下所示。
+*
+* 1、 Header  --   头部，可用于展示菜单等信息。
+* 2、 Content --   主要内容区域，可用于展示列表、文章等。
+* 3、 Footer  --   页脚，可用于展示站点信息、备案信息等多种信息。
+* 4、 Sidebar --   侧边栏（内容区域两遍空白均为侧边栏），可用于展示作者信息，也可用作他用。
+*/
+@import "header";
+
+@import "content";
+
+@import "footer";
+
+@import "sidebar";
