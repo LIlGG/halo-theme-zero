@@ -4,10 +4,10 @@
   <th:block th:replace="scripts/libs"></th:block>
 
   <!--/* 基础 JS */-->
-  <script type="module" th:src="@{/assets/dist/js/zero.min.js?v={version}(version=${theme.spec.version})}"></script>
+  <script type="module" th:src="@{/assets/dist/js/zero.min.js}"></script>
 
   <!--/* PJAX */-->
-  <script th:if="${theme.config.global.pjax}" th:src="@{/assets/dist/js/pjax/pjax.min.js}"></script>
+  <script type="module" th:if="${theme.config.global.pjax}" th:src="@{/assets/dist/js/pjax/pjax.min.js}"></script>
 
   <!--/* 根据主题风格，导入不同的 js */-->
   <script th:src="@{/assets/dist/js/schemes/{scheme}.min.js(scheme=${theme.config.global.scheme})}"></script>
