@@ -32,8 +32,10 @@
     "@typescript-eslint/parser": "^5.46.1",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.29.0",
+    "lost": "^9.0.1",
     "postcss-css-variables": "^0.18.0",
     "postcss-mixins": "^9.0.4",
+    "postcss-nesting": "^10.2.0",
     "typescript": "^4.9.4",
     "vite": "^4.0.1"
   },

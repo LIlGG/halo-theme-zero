@@ -1,0 +1,15 @@
+.footer {
+  color: var(--grey-dark);
+  font-size: var(--font-size-small);
+  padding: 20px 0;
+}
+
+.footer-inner {
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.powered-by, .theme-info {
+  display: inline-block;
+}

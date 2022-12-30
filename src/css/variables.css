@@ -1,5 +1,5 @@
 /**
-* 全局变量设置，使用 w3c 标准语法。另外可支持自定义属性上的变量设置。
+* 全局变量表，使用 w3c 标准语法。
 * 如果具有多个相同命名的变量，则依据变量作用域确定优先级。如果在同一个作用域上，则后定义的优先。
 * 使用插件 postcss-css-variables https://github.com/MadLittleMods/postcss-css-variables
 */
@@ -28,40 +28,40 @@
 /* 全局构架变量 */
 /* 颜色设置 */
 :root {
-  --body-bg-color: var(--white);
-  --content-bg-color: var(--white);
-  --card-bg-color: var(--whitesmoke);
-  --text-color: var(--black-light);
-  --blockquote-color: var(--grey-dim);
-  --link-color: var(--black-light);
-  --link-hover-color: var(--black-deep);
-  --brand-color: var(--white);
-  --brand-hover-color: var(--white);
-  --btn-default-bg: var(--black-deep);
-  --btn-default-color: var(--white);
-  --btn-default-border-color: var(--black-deep);
-  --btn-default-hover-bg: var(--white);
-  --btn-default-hover-color: var(--black-deep);
-  --btn-default-hover-border-color: var(--black-deep);
+  --body-bg-color:                    var(--white);
+  --content-bg-color:                 var(--white);
+  --card-bg-color:                    var(--whitesmoke);
+  --text-color:                       var(--black-light);
+  --blockquote-color:                 var(--grey-dim);
+  --link-color:                       var(--black-light);
+  --link-hover-color:                 var(--black-deep);
+  --brand-color:                      var(--white);
+  --brand-hover-color:                var(--white);
+  --btn-default-bg:                   var(--black-deep);
+  --btn-default-color:                var(--white);
+  --btn-default-border-color:         var(--black-deep);
+  --btn-default-hover-bg:             var(--white);
+  --btn-default-hover-color:          var(--black-deep);
+  --btn-default-hover-border-color:   var(--black-deep);
 }
 
 /* 黑夜模式颜色设置 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --body-bg-color: var(--dark);
-    --content-bg-color: var(--black-dim);
-    --card-bg-color: var(--black-light);
-    --text-color: var(--grey-light);
-    --blockquote-color: var(--grey);
-    --link-color: var(--grey-light);
-    --link-hover-color: var(--gainsboro);
-    --brand-color: var(--grey);
-    --brand-hover-color: var(--grey-lighter);
-    --btn-default-bg: var(--black-deep);
-    --btn-default-color: var(--grey-light);
-    --btn-default-border-color: var(--black-light);
-    --btn-default-hover-bg: var(--grey-dim);
-    --btn-default-hover-color: var(--black-light);
+    --body-bg-color:                  var(--dark);
+    --content-bg-color:               var(--black-dim);
+    --card-bg-color:                  var(--black-light);
+    --text-color:                     var(--grey-light);
+    --blockquote-color:               var(--grey);
+    --link-color:                     var(--grey-light);
+    --link-hover-color:               var(--gainsboro);
+    --brand-color:                    var(--grey);
+    --brand-hover-color:              var(--grey-lighter);
+    --btn-default-bg:                 var(--black-deep);
+    --btn-default-color:              var(--grey-light);
+    --btn-default-border-color:       var(--black-light);
+    --btn-default-hover-bg:           var(--grey-dim);
+    --btn-default-hover-color:        var(--black-light);
     --btn-default-hover-border-color: var(--grey-dim);
   }
 }
@@ -78,4 +78,68 @@
   
   /* 字体大小 */
   --font-size-base:          1em;
+  --font-size-smallest:      .75em;
+  --font-size-smaller:       .8125em;
+  --font-size-small:         .875em;
+  --font-size-medium:        1em;
+  --font-size-large:         1.125em;
+  --font-size-larger:        1.25em;
+  --font-size-largest:       1.5em;
+}
+
+/* 框架 */
+:root {
+  /* Layout */
+  --content-desktop:         2/3;
+
+  /* 选中 */
+  --selection-bg:            var(--black-deep);
+  --selection-color:         var(--gainsboro);
+
+  /* 链接 */
+  --link-color:              var(--black-light);
+  --link-hover-color:        var(--black-deep);
+  --link-decoration-color:   var(--grey-dark);
+
+  /* body */
+  --body-bg:                 var(--white);
+  --text-color:              var(--black-light);
+
+  /* 行高 */
+  --line-height-base:        2;
+
+  /* 菜单 */
+  --menu-item-bg-color:      var(--whitesmoke);
+}
+
+/* 组件 */
+:root {
+  /* 代码块 */
+  --code-font-family:        var(--font-family-monospace);
+  --code-foreground:         var(--black-light);
+  --code-background:         var(--gainsboro);
+}
+
+/* 大纲 */
+/* headband */
+:root {
+  --headband-bg:             var(--black-deep);
+  --headband-height:         3px;
+}
+
+/* header */
+:root {
+  --head-bg:                 transparent;
+
+  /* site meta*/
+  --site-meta-text-align:    center;
+  --brand-color:           white;
+  --brand-hover-color:     white;
+  --brand-color-dark:        var(--grey-lighter);
+  --brand-hover-color-dark:  var(--grey-lighter);
+
+  --font-size-title:         1.375em;
+  --font-size-subtitle:      var(--font-size-smaller);
+  --subtitle-color:          var(--grey-dark);
+  --site-subtitle-color:     var(--grey-dark);
 }

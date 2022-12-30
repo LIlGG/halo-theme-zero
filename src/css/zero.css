@@ -1,6 +1,8 @@
 /*
 * Zero 基础框架样式，不包含各风格的样式。各风格样式将根据设置动态进行加载。
-* 使用 vite 自带的 postcss-import 功能。https://github.com/postcss/postcss-import
+*
+* 插件参见 postcss.config.js.
+* 使用 vite 自带的 postcss-import 功能。https://github.com/postcss/postcss-import。
 */
 /* mixins */
 @import "mixins.css";

@@ -1,0 +1,32 @@
+.site-nav {
+  display: block;
+}
+
+.menu {
+  margin-top: 20px;
+  padding-left: 0;
+  text-align: center;
+}
+
+.menu-item {
+  display: inline-block;
+  list-style: none;
+  margin: 0 10px;
+
+  & a, & span.exturl {
+    border-bottom: 0;
+    display: block;
+    font-size: var(--font-size-smaller);
+    transition-property: border-color;
+
+    @media (hover: none) {
+      &:hover {
+        border-bottom-color: transparent !important;
+      }
+    }
+  }
+}
+
+.menu-item-active a {
+  background: var(--menu-item-bg-color);
+}

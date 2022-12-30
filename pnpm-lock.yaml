@@ -5,9 +5,11 @@ specifiers:
   '@typescript-eslint/parser': ^5.46.1
   autoprefixer: ^10.4.13
   eslint: ^8.29.0
+  lost: ^9.0.1
   pjax: ^0.2.8
   postcss-css-variables: ^0.18.0
   postcss-mixins: ^9.0.4
+  postcss-nesting: ^10.2.0
   typescript: ^4.9.4
   vite: ^4.0.1
 
@@ -19,12 +21,24 @@ devDependencies:
   '@typescript-eslint/parser': 5.46.1_ha6vam6werchizxrnqvarmz2zu
   autoprefixer: 10.4.13
   eslint: 8.29.0
+  lost: 9.0.1
   postcss-css-variables: 0.18.0
   postcss-mixins: 9.0.4
+  postcss-nesting: 10.2.0
   typescript: 4.9.4
   vite: 4.0.1
 
 packages:
+
+  /@csstools/selector-specificity/2.0.2_laljekdltgzr3kfi7r4exvsr5a:
+    resolution: {integrity: sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==}
+    engines: {node: ^12 || ^14 || >=16}
+    peerDependencies:
+      postcss: ^8.2
+      postcss-selector-parser: ^6.0.10
+    dependencies:
+      postcss-selector-parser: 6.0.11
+    dev: true
 
   /@esbuild/android-arm/0.16.6:
     resolution: {integrity: sha512-wc1AyHlFS8eejfAdePn2wr8/5zEa+FvF3ipBeTo4Qm9Xl0A0miTUfphwzXa3xdxU2pHimRCzIAUhjlbSSts8JQ==}
@@ -553,6 +567,12 @@ packages:
       which: 2.0.2
     dev: true
 
+  /cssesc/3.0.0:
+    resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
+    engines: {node: '>=4'}
+    hasBin: true
+    dev: true
+
   /debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -1000,6 +1020,14 @@ packages:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
 
+  /lost/9.0.1:
+    resolution: {integrity: sha512-/LmgC9pSYB/exL/tG++5QzdcJra0EFezOukGT+Fe4wYJIw477pFqmNaTZlwL7lD751mkGvMg9ef4ktrhG0ojRg==}
+    peerDependencies:
+      postcss: ^8.4.14
+    dependencies:
+      object-assign: 4.1.1
+    dev: true
+
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
@@ -1050,6 +1078,11 @@ packages:
 
   /normalize-range/0.1.2:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  /object-assign/4.1.1:
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -1158,6 +1191,24 @@ packages:
       postcss-js: 4.0.0
       postcss-simple-vars: 7.0.1
       sugarss: 4.0.1
+    dev: true
+
+  /postcss-nesting/10.2.0:
+    resolution: {integrity: sha512-EwMkYchxiDiKUhlJGzWsD9b2zvq/r2SSubcRrgP+jujMXFzqvANLt16lJANC+5uZ6hjI7lpRmI6O8JIl+8l1KA==}
+    engines: {node: ^12 || ^14 || >=16}
+    peerDependencies:
+      postcss: ^8.2
+    dependencies:
+      '@csstools/selector-specificity': 2.0.2_laljekdltgzr3kfi7r4exvsr5a
+      postcss-selector-parser: 6.0.11
+    dev: true
+
+  /postcss-selector-parser/6.0.11:
+    resolution: {integrity: sha512-zbARubNdogI9j7WY4nQJBiNqQf3sLS3wCP4WfOidu+p28LofJqDH1tcXypGrcmMHhDk2t9wGhCsYe/+szLTy1g==}
+    engines: {node: '>=4'}
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
     dev: true
 
   /postcss-simple-vars/7.0.1:
@@ -1358,6 +1409,10 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.1.1
+    dev: true
+
+  /util-deprecate/1.0.2:
+    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: true
 
   /vite/4.0.1:

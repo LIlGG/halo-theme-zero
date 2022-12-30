@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="site-meta">
-    <div class="site-meta-headline">
+    <div class="site-meta-headline" th:if="${not #strings.isEmpty(site.logo)}">
       <a>
         <img class="logo-image" th:src="${site.logo}" th:alt="${site.title}">
       </a>

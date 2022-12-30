@@ -1,0 +1,19 @@
+.container {
+  min-height: 100%;
+  position: relative;
+  lost-utility: edit;
+  lost-utility: clearfix;
+}
+
+.headband {
+  background: var(--headband-bg);
+  height: var(--headband-height);
+}
+
+.header {
+  background: var(--head-bg);
+}
+
+.header-inner, .main-inner, .footer-inner {
+  lost-center: var(--content-desktop);
+}
