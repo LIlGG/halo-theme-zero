@@ -1,15 +1,20 @@
 <!--/* 首页 */-->
-<th:block th:replace="_layout :: layout(title = ~{::title}, content = ~{::content})">
+<th:block th:replace="_layout :: layout(title = ~{::title}, content = ~{::content}, sidebar = ~{::sidebar})">
   <th:block th:fragment="title">
     <th:block th:if="${#strings.isEmpty(site.subtitle)}" th:text="${site.title}"></th:block>
     <th:block th:unless="${#strings.isEmpty(site.subtitle)}" th:text="|${site.title} - ${site.subtitle}|"></th:block>
   </th:block>
 
   <th:block th:fragment="content">
-    <!--/* TODO: post-list each */-->
+    <!--/* post-list */-->
+    <th:block th:each="post : ${posts.items}">
+      <th:block th:replace="macro/post :: post(${post})" />
+    </th:block>
     <!--/* TODO: pagination */-->
-    <div>
-      index content
-    </div>
+    
+  </th:block>
+
+  <th:block th:fragment="sidebar">
+    <th:blocK th:replace="macro/sidebar"/>
   </th:block>
 </th:block>

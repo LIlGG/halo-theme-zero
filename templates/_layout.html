@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" lang="zh-CN" th:fragment="layout(title, content)">
+<html xmlns:th="https://www.thymeleaf.org" lang="zh-CN" th:fragment="layout(title, content, sidebar)">
   <head>
     <!--/* 引入公共 Head */-->
     <th:block th:replace="module/head/index"/>
@@ -29,6 +29,7 @@
             <th:block th:replace="module/comments"/>
           </div>
           <!--/* TODO：页面内侧边栏 */-->
+          <th:block th:replace="${sidebar}"/>
         </div>
       </main>
       <!--/* 页脚 */-->

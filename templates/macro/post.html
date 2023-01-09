@@ -1,0 +1,56 @@
+<!--/* post */-->
+<th:block th:fragment="post(postItem)">
+  <article itemscope itemtype="http://schema.org/Article">
+    <!--/* 结构化数据 */-->
+    <link itemprop="mainEntityOfPage" th:href="${postItem.status.permalink}">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person" th:with="author = ${contributorFinder.getContributor(postItem.spec.owner)}">
+      <meta itemprop="image" th:content="${author.avatar}">
+      <meta itemprop="name" th:content="${author.displayName}">
+      <meta itemprop="description" th:content="${author.bio}">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" th:content="${postItem.spec.title}">
+    </span>
+
+    <!--/* post header */-->
+    <header class="post-header">
+      <h3 class="post-title">
+        <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a>
+      </h3>
+      <div class="post-meta">
+        <!--/* 创建日期 */-->
+        <!--/* TODO: 更新日期（Halo 暂时不存在） */-->
+        <!--/* TODO: 浏览量 */-->
+        <!--/* TODO: 评论量 */-->
+        <!--/* TODO: 点赞量 */-->
+        <!--/* TODO: 分类 */-->
+        <!--/* TODO: 标签 */-->
+        <!--/* TODO: 字数 */-->
+        <!--/* TODO: 文章描述 */-->
+      </div>
+    </header>
+
+    <!--/* post body */-->
+    <div class="post-body">
+      <!--/* 对不同的 post 进行单独设计 */-->
+      <th:block th:if="${_templateId == 'index'}" th:utext="${postItem.status.excerpt}"></th:block>
+      <th:block th:unless="${_templateId == 'index'}" th:utext="${postItem.content.content}"></th:block>
+    </div>
+
+    <!--/* body footer */-->
+    <th:block th:if="${_templateId == 'index'}">
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    </th:block>
+    <th:block th:unless="${_templateId == 'index'}">
+      <!--/* TODO: 相关文章推荐 */-->
+      <!--/* TODO: 文章激励（打赏） */-->
+      <!--/* TODO: 创作者版权申明 */-->
+      <!--/* TODO: 关注/分享 */-->
+      <footer class="post-footer">
+        <!--/* TODO: 标签 */-->
+      </footer>
+    </th:block>
+  </article>
+</th:block>

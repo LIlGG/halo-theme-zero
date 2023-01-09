@@ -1,5 +1,10 @@
 .site-nav {
   display: block;
+
+  @mixin screens-sm {
+    clear: both;
+    display: none;
+  }
 }
 
 .menu {

@@ -18,15 +18,15 @@ export default defineConfig({
         entryFileNames: '[name].min.js',
         assetFileNames: (assetInfo) => {
           if (assetInfo.name.endsWith('.css')) {
-            return 'css/[name].min.[ext]'
+            return 'css/[name].min.[ext]';
           }
-          return '[name].min.[ext]'
+          return '[name].min.[ext]';
         }
       },
     },
     sourcemap: true
   },
-  resolve:{
+  resolve: {
     alias:{
       '@':path.resolve(__dirname,'./src')
     }

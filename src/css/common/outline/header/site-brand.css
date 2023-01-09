@@ -7,6 +7,10 @@
 .site-nav-toggle, .site-nav-right {
   display: none;
 
+  @mixin screens-sm {
+    lost-flex-container: column;
+  }
+
   & .toggle {
     color: var(--text-color);
     padding: 10px;

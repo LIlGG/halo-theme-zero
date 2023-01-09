@@ -1,7 +1,6 @@
 /**
 * 全局变量表，使用 w3c 标准语法。
-* 如果具有多个相同命名的变量，则依据变量作用域确定优先级。如果在同一个作用域上，则后定义的优先。
-* 使用插件 postcss-css-variables https://github.com/MadLittleMods/postcss-css-variables
+* 如果具有多个相同命名的变量，则依据变量作用域确定优先级。
 */
 
 /* 全局 colors 变量 */
@@ -90,7 +89,7 @@
 /* 框架 */
 :root {
   /* Layout */
-  --content-desktop:         2/3;
+  --content-desktop:         66.6%;
 
   /* 选中 */
   --selection-bg:            var(--black-deep);

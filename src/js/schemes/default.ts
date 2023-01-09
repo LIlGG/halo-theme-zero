@@ -1,1 +1,1 @@
-import "@/css/schemes/default.css";
+import "@/css/schemes/zero/index.css";

@@ -4,7 +4,10 @@
   <meta name="generator" content="Halo 2.0.0">
 
   <!--/* 全局 css */-->
-  <link rel="stylesheet" th:href="@{/assets/dist/css/zero.min.css?v={version}(version=${theme.spec.version})}">
+  <link rel="stylesheet" th:href="@{/assets/dist/css/zero.min.css}">
+
+  <!--/* 根据主题风格，导入不同的 css */-->
+  <link rel="stylesheet" th:href="@{/assets/dist/css/{scheme}.min.css(scheme=${theme.config.global.scheme})}">
 
   <!--/* TODO: 待定加入字体 */-->
 
